@@ -1,16 +1,25 @@
 import React from 'react'
 import FlexWrapper from '../FlexWrapper/FlexWrapper';
 import Item from '../Item/Item';
+import products from '../../data/products';
 
 
-function ItemListContainer(props) {
+function ItemListContainer() {
   return (
     <div>
         <FlexWrapper>
-          <Item title="Proteina" imgurl="/img/proteina.webp" price={1000} details="Lorem ipsum"> </Item>
-          <Item title="Proteina 1" imgurl="/img/proteina1.webp" price={2000} details="Lorem ipsum"> </Item>
-          <Item title="Creatina " imgurl="/img/ultraflex.webp" price={3000} details="Lorem ipsum"> </Item>
-          <Item title="Creatina 1" imgurl="/img/creatina.webp" price={4000} details="Lorem ipsum"> </Item>
+          
+          {products.map((product) => (
+            <Item 
+              key={product.id}
+              title={product.title}
+              imgurl={product.thumbnail}
+              price={product.price} 
+              details={product.description}
+              stock={product.stock}
+            />
+          ))
+          }
         </FlexWrapper>
     </div>
   )

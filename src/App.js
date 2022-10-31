@@ -10,7 +10,7 @@ function App() {
       <header className="App-header">
       <NavBar/>  
       </header>
-      <ItemListContainerGreeting greeting="Bienvenidos a la tienda!"> </ItemListContainerGreeting> 
+      <ItemListContainer> </ItemListContainer> 
     </div>
   );
 }

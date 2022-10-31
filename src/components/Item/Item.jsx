@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../button/Button';
 import "./item.css";
 
 function Item(props) {
+  const [ isFavorite, setIsFavorite ] = useState(false);
+
+  function handleFavorite(){
+    setIsFavorite(!isFavorite)
+  } 
+
+  let classButtonFavorite = isFavorite? "card-favicon favorite" : "card-favicon";
+
   return (
     <div className='card'>
+      <button onClick={ handleFavorite } className={classButtonFavorite} >♥</button>
       <div className='card-img'>
         <img src={props.imgurl} alt="Product img" />
       </div>
